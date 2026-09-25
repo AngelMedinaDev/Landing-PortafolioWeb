@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <!-- Navegación -->
+    <nav class="absolute w-full top-0 z-50 p-6 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
+        <div class="text-white font-bold text-xl tracking-tighter">
+            ANGEL<span class="text-blue-500">MEDINA</span>
+        </div>
+        <div class="flex gap-4">
+            <a href="mailto:angelmedina.dev@gmail.com?subject=Cotización%20de%20Proyecto%20Web&body=Hola%20Ángel,%20vengo%20de%20tu%20portafolio%20y%20me%20gustaría%20platicar%20sobre%20una%20landing%20page." class="hidden md:inline-flex text-sm font-medium text-slate-400 hover:text-white px-4 py-2 transition-colors items-center">
+                angelmedina.dev@gmail.com
+            </a>
+            <a href="https://wa.me/5218122091544?text=Hola%20Ángel,%20vengo%20de%20tu%20página%20y%20me%20interesa%20cotizar%20un%20proyecto." target="_blank" class="text-sm font-semibold text-slate-300 hover:text-white border border-slate-700 hover:border-blue-500 px-4 py-2 rounded-full transition-all">
+                WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Gradiente inicial) -->
+    <header class="relative min-h-[90vh] flex items-center justify-center pt-20 px-6 overflow-hidden bg-gradient-to-b from-[#0B1120] to-[#0F172A]">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 fade-up">
+            <div class="inline-block bg-blue-500/10 border border-blue-500/30 text-blue-400 font-medium text-sm px-4 py-1.5 rounded-full mb-6">
+                Ingeniería Web de Alto Rendimiento
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
+                No hago plantillas. <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Construyo máquinas de venta.</span>
+            </h1>
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+                Desarrollo landing pages a la medida, ultrarrápidas y diseñadas específicamente para que tu negocio convierta más clientes.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/5218122091544?text=Hola%20Ángel,%20vengo%20de%20tu%20página%20y%20me%20interesa%20cotizar%20un%20proyecto." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                    Cotizar por WhatsApp
+                </a>
+                <a href="mailto:angelmedina.dev@gmail.com?subject=Cotización%20de%20Proyecto%20Web&body=Hola%20Ángel,%20vengo%20de%20tu%20portafolio%20y%20me%20gustaría%20platicar%20sobre%20una%20landing%20page." class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-full transition-all border border-slate-700 hover:border-slate-500">
+                    Enviar Correo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Autoridad -->
+    <section class="border-y border-slate-700 bg-[#1E293B] py-8 px-6 shadow-inner">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div>
+                <h4 class="text-white font-bold text-2xl">+3 Años</h4>
+                <p class="text-slate-400 text-sm uppercase tracking-wider">Desarrollo Corporativo</p>
+            </div>
+            <div class="hidden md:block w-px h-12 bg-slate-600"></div>
+            <div>
+                <h4 class="text-white font-bold text-2xl">100% A la Medida</h4>
+                <p class="text-slate-400 text-sm uppercase tracking-wider">Cero Plantillas Lentas</p>
+            </div>
+            <div class="hidden md:block w-px h-12 bg-slate-600"></div>
+            <div>
+                <h4 class="text-white font-bold text-2xl">Código Limpio</h4>
+                <p class="text-slate-400 text-sm uppercase tracking-wider">Máxima Velocidad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Trabajo -->
+    <section class="py-24 px-6 relative bg-[#0B1120]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">¿Cómo trabajamos?</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Un proceso estructurado con mentalidad de ingeniero de software para garantizar resultados reales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-blue-500 transition-colors">
+                    <div class="text-blue-500 font-black text-6xl opacity-20 absolute -right-2 -top-4 group-hover:scale-110 transition-transform">01</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Descubrimiento</h3>
+                    <p class="text-slate-400">Analizamos tu giro, tus clientes y qué necesitas que haga la página (captar leads, vender, agendar citas).</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-blue-500 transition-colors">
+                    <div class="text-blue-500 font-black text-6xl opacity-20 absolute -right-2 -top-4 group-hover:scale-110 transition-transform">02</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Desarrollo Ágil</h3>
+                    <p class="text-slate-400">Tiro código limpio usando las mejores tecnologías para que tu sitio cargue en menos de un segundo.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-blue-500 transition-colors">
+                    <div class="text-blue-500 font-black text-6xl opacity-20 absolute -right-2 -top-4 group-hover:scale-110 transition-transform">03</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lanzamiento</h3>
+                    <p class="text-slate-400">Publicamos tu sitio blindado y optimizado. Listo para que le metas publicidad o lo compartas con el mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio / Demos -->
+    <section class="py-24 px-6 bg-[#0F172A] border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-20">Proyectos Recientes</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+                
+                <!-- Proyecto 1: SYNA -->
+                <div class="group flex flex-col">
+                    <div class="relative mb-10 mt-4">
+                        <div class="relative z-10 w-[85%] transition-transform duration-500 group-hover:-translate-y-2 shadow-2xl shadow-black/50">
+                            <div class="bg-[#1E293B] rounded-t-lg border-x border-t border-slate-700 px-3 py-2 flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                            </div>
+                            <div class="w-full aspect-[16/10] border-x border-b border-slate-700 rounded-b-lg overflow-hidden bg-slate-900">
+                                <img src="/syna-landing.png" alt="Clínica SYNA Desktop" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[5s] ease-in-out" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWx0YSBzeW5hLWxhbmRpbmcucG5nPC90ZXh0Pjwvc3ZnPg=='"/>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-2 z-20 w-[32%] min-w-[90px] shadow-2xl shadow-black/80 transition-transform duration-500 group-hover:-translate-y-4 group-hover:-translate-x-2">
+                            <div class="bg-slate-800 rounded-[1.5rem] p-1.5 border border-slate-600">
+                                <div class="w-full aspect-[9/19] rounded-[1.2rem] overflow-hidden bg-slate-900 relative">
+                                    <img src="/syna-landing-mobile.png" alt="Clínica SYNA Mobile" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[4s] ease-in-out" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWx0YSBtb2JpbGUucG5nPC90ZXh0Pjwvc3ZnPg=='"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <span class="text-xs font-bold text-green-400 mb-2 block tracking-wider uppercase">Proyecto en Vivo</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Clínica SYNA</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Plataforma web rápida y profesional para captar pacientes de psicología.</p>
+                        <a href="https://www.syna.com.mx/" target="_blank" class="text-blue-400 hover:text-white font-medium inline-flex items-center transition-colors">
+                            Ver sitio en vivo <span class="ml-2">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Dentista -->
+                <div class="group flex flex-col">
+                    <div class="relative mb-10 mt-4">
+                        <div class="relative z-10 w-[85%] transition-transform duration-500 group-hover:-translate-y-2 shadow-2xl shadow-black/50">
+                            <div class="bg-[#1E293B] rounded-t-lg border-x border-t border-slate-700 px-3 py-2 flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                            </div>
+                            <div class="w-full aspect-[16/10] border-x border-b border-slate-700 rounded-b-lg overflow-hidden bg-slate-900">
+                                <img src="/dentista-landing.png" alt="Dentista Desktop" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[5s] ease-in-out" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWx0YSBzeW5hLWxhbmRpbmcucG5nPC90ZXh0Pjwvc3ZnPg=='"/>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-2 z-20 w-[32%] min-w-[90px] shadow-2xl shadow-black/80 transition-transform duration-500 group-hover:-translate-y-4 group-hover:-translate-x-2">
+                            <div class="bg-slate-800 rounded-[1.5rem] p-1.5 border border-slate-600">
+                                <div class="w-full aspect-[9/19] rounded-[1.2rem] overflow-hidden bg-slate-900 relative">
+                                    <img src="/dentista-landing-mobile.png" alt="Dentista Mobile" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[4s] ease-in-out" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWx0YSBtb2JpbGUucG5nPC90ZXh0Pjwvc3ZnPg=='"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <span class="text-xs font-bold text-blue-400 mb-2 block tracking-wider uppercase">Demo Funcional</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Sector Dental</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Estructura persuasiva diseñada para agendar citas directamente por WhatsApp.</p>
+                        <a href="https://landing-dentista-nine.vercel.app/" target="_blank" class="text-blue-400 hover:text-white font-medium inline-flex items-center transition-colors">
+                            Ver prototipo <span class="ml-2">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: DuraTecho -->
+                <div class="group flex flex-col">
+                    <div class="relative mb-10 mt-4">
+                        <div class="relative z-10 w-[85%] transition-transform duration-500 group-hover:-translate-y-2 shadow-2xl shadow-black/50">
+                            <div class="bg-[#1E293B] rounded-t-lg border-x border-t border-slate-700 px-3 py-2 flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                            </div>
+                            <div class="w-full aspect-[16/10] border-x border-b border-slate-700 rounded-b-lg overflow-hidden bg-slate-900">
+                                <img src="/duratecho-landing.png" alt="DuraTecho Desktop" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[5s] ease-in-out" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWx0YSBzeW5hLWxhbmRpbmcucG5nPC90ZXh0Pjwvc3ZnPg=='"/>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-2 z-20 w-[32%] min-w-[90px] shadow-2xl shadow-black/80 transition-transform duration-500 group-hover:-translate-y-4 group-hover:-translate-x-2">
+                            <div class="bg-slate-800 rounded-[1.5rem] p-1.5 border border-slate-600">
+                                <div class="w-full aspect-[9/19] rounded-[1.2rem] overflow-hidden bg-slate-900 relative">
+                                    <img src="/duratecho-landing-mobile.png" alt="DuraTecho Mobile" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[4s] ease-in-out" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWx0YSBtb2JpbGUucG5nPC90ZXh0Pjwvc3ZnPg=='"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <span class="text-xs font-bold text-blue-400 mb-2 block tracking-wider uppercase">Demo Funcional</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">DuraTecho</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Diseño industrial de alto impacto para negocios del sector construcción.</p>
+                        <a href="https://landing-duratecho.vercel.app/" target="_blank" class="text-blue-400 hover:text-white font-medium inline-flex items-center transition-colors">
+                            Ver prototipo <span class="ml-2">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA Final (Gradiente a negro) -->
+    <footer class="py-24 px-6 text-center bg-gradient-to-b from-[#0F172A] to-black">
+        <div class="max-w-3xl mx-auto glass-card p-10 md:p-16 rounded-3xl border border-slate-700/50">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Listo para dejar atrás a tu competencia?</h2>
+            <p class="text-slate-400 mb-10 text-lg">Una página lenta te hace perder clientes. Mándame un mensaje y armamos tu nueva herramienta de ventas.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/5218122091544?text=Hola%20Ángel,%20vengo%20de%20tu%20página%20y%20me%20interesa%20cotizar%20un%20proyecto." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-white text-slate-900 font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 hover:bg-slate-200">
+                    Iniciar Proyecto
+                </a>
+                <a href="mailto:angelmedina.dev@gmail.com?subject=Cotización%20de%20Proyecto%20Web&body=Hola%20Ángel,%20vengo%20de%20tu%20portafolio%20y%20me%20gustaría%20platicar%20sobre%20una%20landing%20page." class="w-full sm:w-auto inline-flex items-center justify-center text-slate-300 hover:text-white font-bold py-4 px-10 transition-all hover:underline">
+                    angelmedina.dev@gmail.com
+                </a>
+            </div>
+        </div>
+        <p class="text-slate-600 mt-16 text-sm">© 2026 Ángel Medina. Desarrollado con código limpio.</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP (Agregado aquí) -->
+    <a href="https://wa.me/5218122091544?text=Hola%20Ángel,%20vengo%20de%20tu%20página%20y%20me%20interesa%20cotizar%20un%20proyecto." class="whatsapp-btn shadow-lg shadow-green-500/30" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 32 32" width="35" height="35" fill="white"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.89.756 5.6 2.078 7.96L.26 31.604l7.417-1.94A15.944 15.944 0 0016 32c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.07a13.01 13.01 0 01-6.63-1.83l-.475-.282-4.4 1.15 1.17-4.29-.31-.44a13.01 13.01 0 01-2.02-6.98C3.335 9.07 9.07 3.335 16 3.335S28.665 9.07 28.665 16 22.93 29.466 16 29.466zm7.36-9.73c-.4-.2-2.36-1.17-2.72-1.3-.36-.13-.62-.2-.88.2s-1 1.3-1.22 1.56c-.22.26-.44.3-.84.1s-1.7-.62-3.23-1.98c-1.2-1.06-2-2.36-2.24-2.76-.23-.4-.02-.62.18-.82.18-.18.4-.46.6-.7.2-.24.26-.4.4-.66.13-.26.07-.48-.03-.68s-.88-2.12-1.2-2.9c-.32-.77-.64-.66-.88-.67h-.75c-.26 0-.68.1-1.04.48-.36.4-1.36 1.33-1.36 3.23s1.4 3.74 1.6 4c.2.26 2.76 4.22 6.7 5.92.94.4 1.67.64 2.24.82.94.3 1.8.26 2.48.16.76-.12 2.36-.96 2.7-1.9.34-.94.34-1.74.24-1.9-.1-.16-.36-.26-.76-.46z"/></svg>
+    </a>
+</Layout>
+
+<style>
+    /* Estilo del botón flotante añadido */
+    .whatsapp-btn { 
+        position: fixed; 
+        bottom: 30px; 
+        right: 30px; 
+        width: 60px; 
+        height: 60px; 
+        background-color: #25D366; 
+        border-radius: 50%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        z-index: 1000; 
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    }
+    .whatsapp-btn:hover { 
+        transform: scale(1.15) rotate(-5deg); 
+    }
+</style>
