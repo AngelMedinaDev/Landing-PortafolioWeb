@@ -13,7 +13,13 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         
-        <!-- SEO y Meta Tags -->
+        <!-- Open Graph Tags (Nuevos) -->
+        <meta property="og:title" content="Ángel Medina | Ingeniería Web y Landing Pages" />
+        <meta property="og:description" content="Landing pages ultrarrápidas y desarrollo web a la medida. Escala tu negocio con software profesional y optimizado para ventas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://angelmedinarivas.dev" />
+        <meta property="og:image" content="https://angelmedinarivas.dev/og-image.jpg" />
+        
         <title>{title || "Ángel Medina | Ingeniería Web y Landing Pages"}</title>
         <meta name="description" content="Landing pages ultrarrápidas y desarrollo web a la medida. Escala tu negocio con software profesional y optimizado para ventas." />
         
@@ -30,7 +36,6 @@ const { title } = Astro.props;
 <style is:global>
     body { font-family: 'Inter', sans-serif; }
     
-    /* Efecto de cristal y bordes premium */
     .glass-card {
         background: rgba(30, 41, 59, 0.7);
         backdrop-filter: blur(10px);
@@ -38,7 +43,6 @@ const { title } = Astro.props;
         border: 1px solid rgba(59, 130, 246, 0.2);
     }
 
-    /* Animaciones chidas */
     .fade-up {
         animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
