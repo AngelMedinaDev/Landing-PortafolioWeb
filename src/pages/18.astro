@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Tlacuachito ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --butter-yellow: #fff3c7;
+            --butter-dark: #fde073;
+            --text-dark: #5a4b3c;
+            --text-light: #7a6854;
+            --heart-color: #ff9a9e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--butter-yellow) 0%, var(--butter-dark) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lora', serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Corazones flotantes para el fondo */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -5vh;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Tarjeta Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 650px;
+            width: 90%;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px 0 rgba(200, 160, 50, 0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d49a42;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #d49a42;
+        }
+
+        .date-section {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Lora', serif;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .date-section .quote {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .date-section .date {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+        }
+
+        /* Ajustes para celular */
+        @media (max-width: 600px) {
+            .glass-card {
+                padding: 30px 20px;
+            }
+            .title {
+                font-size: 2.5rem;
+            }
+            .content {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animación de fondo -->
+    <div class="hearts-bg" id="hearts-container"></div>
+
+    <div class="glass-card">
+        <h1 class="title">Para mi persona favorita</h1>
+        
+        <div class="content">
+            <p>
+                Mi amoooor, wow, no puedo creer que ya son dos años a tu lado, los mejores dos años de mi vida, dos años donde has sido mi persona favorita, dos años donde han pasado muchisisimas cosas. Fuimos a Los Ángeles dos veces, hemos ido a retiros, campamentos, cabañas; hemos chocado con cosas en carretera, cambiado llantas, nos robaron cosas del carro. Te has movido y lanzado a tener tu propio centro y estás a punto de ir a uno nuevo.
+            </p>
+            <p>
+                Hemos reído y diría yo que este año nos pudimos conocer en aspectos que no fueron tan bonitos, nos hemos enojado, llorado... pero aun con todo eso me sigo enamorando de ti todos los días, sigo creyendo que eres la persona perfecta para mi vida y ya no puedo imaginar una vida sin ti. Amo cada cambio y cada proceso que hemos pasado juntos, amo la persona que eres el día de hoy. He aprendido tanto de ti, tu paciencia, valentía, empatía con los demás, un amor tan intenso por tu carrera y objetivos que también me inspiran a mí. Eres la persona más increíble, tierna, amorosa y linda que conozco, no puedo esperar a que pasemos el resto de nuestra vida juntos. 
+            </p>
+            <p>
+                Gracias por querer estar a mi lado aun en estos momentos que, si bien no me pides nada, yo no te puedo dar todo lo que quisiera. Amo que me has apoyado y ayudado tanto cuando tenía mucho para darte como cuando solo hemos podido comer atún. No puedo creer la persona tan amorosa, respetuosa y la graaaan mujer que eres, alguien que, si bien no soy perfecto, me hace sentir tan seguro de ser quien soy cuando estoy contigo... tanto así que al inicio decía que nunca me escucharías cantar y ahora hasta hago voces jajaja, eso con el simple propósito de hacerte reír y ver esa sonrisa tan hermosa que amo ver siempre. 
+            </p>
+            <p>
+                Sé que hay muuchas cosas que aún tenemos que seguir aprendiendo y trabajar individualmente y en nuestra relación, pero me encanta que lo haré y llevaré con mi mejor amiga, mi mailob. Amo sentirme tuyo y no puedo esperar para pasar la eternidad a tu lado mi tlacuachito. 
+            </p>
+        </div>
+
+        <div class="footer">
+            Te amo Abi ❤️
+        </div>
+
+        <div class="date-section">
+            <div class="quote">"18 eternos a tu lado mi vida."</div>
+            <div class="date">18.10.2026</div>
+        </div>
+    </div>
+
+    <!-- Script cortito para generar los corazones al azar -->
+    <script>
+        const container = document.getElementById('hearts-container');
+        const colors = ['#ffffff', '#fff', '#fde073'];
+        
+        for(let i = 0; i < 15; i++) {
+            let heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '✨'; // Puedes cambiarlo por '❤️' si prefieres
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            container.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
