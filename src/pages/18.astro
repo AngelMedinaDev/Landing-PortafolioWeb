@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -176,21 +178,23 @@
         </div>
     </div>
 
-    <!-- Script cortito para generar los corazones al azar -->
-    <script>
+    <!-- Script con is:inline para arreglar el error en VS Code -->
+    <script is:inline>
         const container = document.getElementById('hearts-container');
         const colors = ['#ffffff', '#fff', '#fde073'];
         
-        for(let i = 0; i < 15; i++) {
-            let heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '✨'; // Puedes cambiarlo por '❤️' si prefieres
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
-            heart.style.animationDelay = Math.random() * 5 + 's';
-            heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
-            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
-            container.appendChild(heart);
+        if (container) {
+            for(let i = 0; i < 15; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '✨'; 
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                container.appendChild(heart);
+            }
         }
     </script>
 </body>
