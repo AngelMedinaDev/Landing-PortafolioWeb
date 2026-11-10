@@ -1,16 +1,16 @@
-v// src/pages/api/cotizar.js
+import { supabase } from '../../lib/supabase';
+
+export const prerender = false; // Asegura que esto corra en el servidor
+
 export const POST = async ({ request }) => {
     try {
         const data = await request.json();
-        const { tipo, largo, alto, factor } = data;
+        const { cliente, tipo, cantidad, largo, alto, factor } = data;
 
-        // Aquí jalas los precios de tu base de datos (Supabase) según la empresa que esté logueada.
-        // Por ahora usamos los default de prueba.
+        // Fórmulas de cálculo (Ocultas del frontend)
         const cfg = { riel: 50, jamba: 50, zoclo: 50, cercoFijo: 50, traslape: 50, cercoChapa: 50, mosquitero: 50, vidrio: 50, herrajes: 5 };
-        
         let costoTotal = 0;
 
-        // TUS FÓRMULAS SECRETAS - Nadie en el frontend puede ver esto
         if (tipo === 'v2') {
             costoTotal += (largo / 6.1) * cfg.riel;
             costoTotal += ((largo + alto + largo) / 6.1) * cfg.jamba;
@@ -33,14 +33,43 @@ export const POST = async ({ request }) => {
         }
 
         const precioVenta = costoTotal * factor;
+        const totalConCantidad = precioVenta * cantidad;
+
+        // Guardar en Supabase
+        // Nota: Ahorita no le pasamos empresa_id ni vendedor_id porque aún no armamos el login,
+        // pero guardamos el resto de los datos en la tabla 'cotizaciones'
+        const { error } = await supabase
+            .from('cotizaciones')
+            .insert([
+                {
+                    cliente_nombre: cliente,
+                    total: totalConCantidad,
+                    detalles_json: {
+                        tipo: tipo,
+                        cantidad: cantidad,
+                        largo: largo,
+                        alto: alto,
+                        factor_aplicado: factor
+                    }
+                }
+            ]);
+
+        if (error) throw error;
 
         return new Response(JSON.stringify({
             success: true,
-            costoReal: costoTotal,
-            precioVenta: precioVenta
-        }), { status: 200 });
+            costoReal: costoTotal * cantidad,
+            precioVenta: totalConCantidad
+        }), { 
+            status: 200,
+            headers: { 'Content-Type': 'application/json' }
+        });
 
     } catch (error) {
-        return new Response(JSON.stringify({ success: false, message: 'Error al cotizar' }), { status: 500 });
+        console.error("Error en API:", error);
+        return new Response(JSON.stringify({ success: false, message: 'Error al cotizar' }), { 
+            status: 500,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 }
