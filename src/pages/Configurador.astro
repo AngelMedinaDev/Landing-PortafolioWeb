@@ -2,82 +2,95 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Configuración | Precios">
-	<!-- Igual aquí, fondo blanco absoluto para tapar el dark mode de tu Layout -->
-	<div class="min-h-screen bg-slate-100 text-slate-800 font-sans absolute top-0 left-0 w-full z-50">
-		<header class="bg-blue-600 text-white shadow-md p-4 flex justify-between items-center relative z-50">
-			<h1 class="text-2xl font-bold tracking-tight m-0 text-white">Aluminios Pro</h1>
-			<a href="/Cotizador" class="text-blue-200 hover:text-white font-medium no-underline">← Volver al Cotizador</a>
-		</header>
+<Layout title="Cotizador Pro">
+	<div class="min-h-screen bg-slate-100 text-slate-800 p-4">
+		<main class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-6">
+			<h2 class="text-2xl font-bold mb-6">Cotización para Cliente</h2>
+			
+			<form id="cotizador-form" class="space-y-4">
+				<!-- Datos del Cliente -->
+				<div>
+					<label class="block text-sm font-bold text-gray-700">Nombre del Cliente</label>
+					<input type="text" id="cliente" class="w-full p-2 border rounded" placeholder="Ej. Juan Pérez" required>
+				</div>
 
-		<main class="max-w-xl mx-auto p-4 mt-6 relative z-50">
-			<div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-gray-600">
-				<h2 class="text-2xl font-bold mb-6 text-gray-800">Precios y Configuración</h2>
+				<div class="grid grid-cols-2 gap-4">
+					<div>
+						<label class="block text-sm font-bold text-gray-700">Tipo</label>
+						<select id="tipo" class="w-full p-2 border rounded">
+							<option value="v2">Ventana 2"</option>
+							<option value="pta3">Puerta 3"</option>
+						</select>
+					</div>
+					<div>
+						<label class="block text-sm font-bold text-gray-700">Cantidad (Piezas)</label>
+						<input type="number" id="cantidad" value="1" min="1" class="w-full p-2 border rounded">
+					</div>
+					<div>
+						<label class="block text-sm font-bold text-gray-700">Largo (m)</label>
+						<input type="number" id="largo" step="0.01" class="w-full p-2 border rounded" required>
+					</div>
+					<div>
+						<label class="block text-sm font-bold text-gray-700">Alto (m)</label>
+						<input type="number" id="alto" step="0.01" class="w-full p-2 border rounded" required>
+					</div>
+				</div>
+
+				<button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded mt-4">
+					Calcular y Guardar Cotización
+				</button>
+			</form>
+
+			<div class="mt-6 p-4 bg-slate-800 rounded-lg text-center hidden" id="resultado-box">
+				<p class="text-white text-sm">Precio Final (x<span id="res-cant"></span> piezas):</p>
+				<p class="text-4xl font-black text-green-400" id="precio-final">$0.00</p>
 				
-				<form id="config-form" class="space-y-4">
-					<div class="bg-blue-50 p-4 rounded-lg mb-6 border border-blue-100">
-						<label class="block text-sm font-bold text-blue-900 mb-1">Multiplicador Base (Ej. 2.5)</label>
-						<input type="number" id="cfg-factor" step="0.1" class="w-full p-2 border border-blue-300 rounded font-bold text-lg text-gray-800" required>
-					</div>
-
-					<h3 class="font-bold text-gray-700 border-b border-gray-200 pb-2 m-0 mt-4">Precios Unitarios</h3>
-					<div class="grid grid-cols-2 gap-4">
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Riel</label><input type="number" id="cfg-riel" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Jamba</label><input type="number" id="cfg-jamba" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Zoclo</label><input type="number" id="cfg-zoclo" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Cerco Fijo</label><input type="number" id="cfg-cercoFijo" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Traslape</label><input type="number" id="cfg-traslape" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Cerco Chapa</label><input type="number" id="cfg-cercoChapa" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Mosquitero</label><input type="number" id="cfg-mosquitero" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-						<div><label class="text-sm font-bold text-gray-600 block mb-1">Vidrio</label><input type="number" id="cfg-vidrio" class="w-full p-2 border border-gray-300 rounded text-gray-800"></div>
-					</div>
-					<div class="mt-4">
-						<label class="text-sm font-bold text-gray-600 block mb-1">Herrajes (Costo fijo)</label>
-						<input type="number" id="cfg-herrajes" class="w-full p-2 border border-gray-300 rounded text-gray-800">
-					</div>
-
-					<button type="submit" class="w-full bg-gray-800 hover:bg-black text-white font-bold py-3 px-4 rounded mt-6 shadow-md border-0 cursor-pointer transition-colors">
-						Guardar Precios
-					</button>
-					<p id="save-msg" class="text-green-600 text-center text-sm font-bold hidden mt-2">¡Precios actualizados!</p>
-				</form>
+				<button id="btn-add-more" class="mt-4 bg-slate-600 text-white px-4 py-2 rounded text-sm hover:bg-slate-500">
+					+ Agregar otra ventana a este cliente
+				</button>
 			</div>
 		</main>
 	</div>
 </Layout>
 
 <script is:inline>
-	const configDefault = { riel: 50, jamba: 50, zoclo: 50, cercoFijo: 50, traslape: 50, cercoChapa: 50, mosquitero: 50, vidrio: 50, herrajes: 5, factor: 2.5 };
-
-	function cargarDatos() {
-		const guardado = localStorage.getItem('preciosAluminio');
-		const cfg = guardado ? JSON.parse(guardado) : configDefault;
+	document.getElementById('cotizador-form').addEventListener('submit', async (e) => {
+		e.preventDefault();
 		
-		['factor', 'riel', 'jamba', 'zoclo', 'cercoFijo', 'traslape', 'cercoChapa', 'mosquitero', 'vidrio', 'herrajes'].forEach(id => {
-			const el = document.getElementById(`cfg-${id}`);
-			if (el) el.value = cfg[id];
+		const data = {
+			cliente: document.getElementById('cliente').value,
+			tipo: document.getElementById('tipo').value,
+			cantidad: parseInt(document.getElementById('cantidad').value),
+			largo: parseFloat(document.getElementById('largo').value),
+			alto: parseFloat(document.getElementById('alto').value),
+			factor: 2.5 // Este lo puedes sacar de la sesión del usuario después
+		};
+
+		// Mandamos llamar a tu API en Astro (Backend)
+		const response = await fetch('/api/cotizar', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(data)
 		});
-	}
 
-	const form = document.getElementById('config-form');
-	if (form) {
-		form.addEventListener('submit', (e) => {
-			e.preventDefault();
-			const nuevaConfig = {};
-			['factor', 'riel', 'jamba', 'zoclo', 'cercoFijo', 'traslape', 'cercoChapa', 'mosquitero', 'vidrio', 'herrajes'].forEach(id => {
-				const el = document.getElementById(`cfg-${id}`);
-				nuevaConfig[id] = el ? (parseFloat(el.value) || 0) : 0;
-			});
+		const result = await response.json();
 
-			localStorage.setItem('preciosAluminio', JSON.stringify(nuevaConfig));
+		if(result.success) {
+			const totalConCantidad = result.precioVenta * data.cantidad;
 			
-			const msg = document.getElementById('save-msg');
-			if (msg) {
-				msg.classList.remove('hidden');
-				setTimeout(() => msg.classList.add('hidden'), 2500);
-			}
-		});
-	}
+			document.getElementById('resultado-box').classList.remove('hidden');
+			document.getElementById('res-cant').innerText = data.cantidad;
+			document.getElementById('precio-final').innerText = '$' + totalConCantidad.toLocaleString('es-MX', {minimumFractionDigits: 2});
+			
+			// Aquí es donde harías un segundo fetch para guardar este registro en tu base de datos Supabase
+			// para que aparezca en el Dashboard del historial.
+		}
+	});
 
-	window.addEventListener('DOMContentLoaded', cargarDatos);
+	document.getElementById('btn-add-more').addEventListener('click', () => {
+		document.getElementById('largo').value = '';
+		document.getElementById('alto').value = '';
+		document.getElementById('resultado-box').classList.add('hidden');
+		// Dejamos el nombre del cliente intacto para que siga cotizando al mismo
+	});
 </script>
