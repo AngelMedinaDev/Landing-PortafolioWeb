@@ -1,8 +1,12 @@
-// astro.config.mjs
+// @ts-check
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
 
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
 export default defineConfig({
-  output: 'server', // <-- ESTO ES CLAVE para que funcione la API
-  adapter: vercel(),
+  site: 'https://angelmedinarivas.dev',
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });

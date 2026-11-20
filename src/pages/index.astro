@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import AuthorityBar from '../components/AuthorityBar.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import FooterCta from '../components/FooterCta.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { CONTACT } from '../data/site';
+
+const pageTitle = 'Ángel Medina | Desarrollador Web y Landing Pages en Monterrey';
+const pageDescription =
+	'Desarrollador web en Monterrey con servicio remoto en México. Diseño y desarrollo landing pages y sitios web a medida para clínicas, dentistas, constructoras y PyMEs.';
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Person',
+			'@id': `${CONTACT.siteUrl}/#person`,
+			name: CONTACT.fullName,
+			url: CONTACT.siteUrl,
+			email: `mailto:${CONTACT.email}`,
+			telephone: '+52-81-2209-1544',
+			jobTitle: 'Desarrollador Web',
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: 'Monterrey',
+				addressRegion: 'Nuevo León',
+				addressCountry: 'MX',
+			},
+		},
+		{
+			'@type': 'ProfessionalService',
+			'@id': `${CONTACT.siteUrl}/#service`,
+			name: `${CONTACT.fullName} — Desarrollo Web y Landing Pages`,
+			url: CONTACT.siteUrl,
+			image: `${CONTACT.siteUrl}/og-image.jpg`,
+			email: `mailto:${CONTACT.email}`,
+			telephone: '+52-81-2209-1544',
+			description: pageDescription,
+			founder: { '@id': `${CONTACT.siteUrl}/#person` },
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: 'Monterrey',
+				addressRegion: 'Nuevo León',
+				addressCountry: 'MX',
+			},
+			areaServed: [
+				{
+					'@type': 'City',
+					name: 'Monterrey',
+				},
+				{
+					'@type': 'State',
+					name: 'Nuevo León',
+				},
+				{
+					'@type': 'Country',
+					name: 'México',
+				},
+			],
+			serviceType: [
+				'Landing Page de Conversión',
+				'Sitio Web Profesional para Empresas',
+				'Desarrollo Web a Medida',
+			],
+		},
+	],
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} canonicalPath="/" jsonLd={jsonLd}>
+	<a
+		href="#contenido-principal"
+		class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+	>
+		Saltar al contenido principal
+	</a>
+
+	<Navbar />
+
+	<main id="contenido-principal">
+		<Hero />
+		<AuthorityBar />
+		<ProjectsSection />
+		<ServicesSection />
+		<ProcessSection />
+		<FaqSection />
+	</main>
+
+	<FooterCta />
+	<WhatsAppFloat />
+</Layout>

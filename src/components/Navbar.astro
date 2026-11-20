@@ -1,0 +1,140 @@
+---
+import { CONTACT, NAV_LINKS, getWhatsAppUrl } from '../data/site';
+
+const whatsappHref = getWhatsAppUrl();
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0B1120]/85 backdrop-blur-md">
+	<nav
+		aria-label="Navegación principal"
+		class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6"
+	>
+		<a
+			href="#inicio"
+			class="text-lg font-extrabold tracking-tight text-white transition-colors hover:text-blue-100 sm:text-xl"
+		>
+			{CONTACT.brandFirst}<span class="text-blue-500">{CONTACT.brandSecond}</span>
+		</a>
+
+		<div class="hidden items-center gap-7 md:flex">
+			{
+				NAV_LINKS.map((link) => (
+					<a
+						href={link.href}
+						class="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+					>
+						{link.label}
+					</a>
+				))
+			}
+		</div>
+
+		<div class="flex items-center gap-2.5">
+			<a
+				href={whatsappHref}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Cotizar por WhatsApp"
+				class="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-blue-500/40 bg-blue-600/15 px-4 py-2 text-xs font-semibold text-blue-200 transition-all hover:border-blue-400 hover:bg-blue-600 hover:text-white sm:text-sm"
+			>
+				<span class="sm:hidden">Cotizar</span>
+				<span class="hidden sm:inline">Cotizar por WhatsApp</span>
+			</a>
+
+			<button
+				type="button"
+				id="mobile-menu-toggle"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
+				aria-label="Abrir menú de navegación"
+				class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700/80 bg-slate-900/70 text-slate-200 transition-colors hover:border-slate-500 hover:text-white md:hidden"
+			>
+				<svg
+					id="menu-icon-open"
+					class="h-5 w-5"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+				>
+					<line x1="4" y1="7" x2="20" y2="7"></line>
+					<line x1="4" y1="12" x2="20" y2="12"></line>
+					<line x1="4" y1="17" x2="20" y2="17"></line>
+				</svg>
+				<svg
+					id="menu-icon-close"
+					class="hidden h-5 w-5"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+				>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+				</svg>
+			</button>
+		</div>
+	</nav>
+
+	<div
+		id="mobile-menu"
+		class="hidden border-t border-slate-800/80 bg-[#0B1120]/95 px-4 pb-5 pt-3 md:hidden"
+	>
+		<div class="flex flex-col gap-1">
+			{
+				NAV_LINKS.map((link) => (
+					<a
+						href={link.href}
+						data-mobile-nav-link
+						class="rounded-lg px-3 py-2.5 text-base font-medium text-slate-200 transition-colors hover:bg-slate-800/70 hover:text-white"
+					>
+						{link.label}
+					</a>
+				))
+			}
+		</div>
+	</div>
+</header>
+
+<script>
+	const toggleBtn = document.getElementById('mobile-menu-toggle');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const iconOpen = document.getElementById('menu-icon-open');
+	const iconClose = document.getElementById('menu-icon-close');
+
+	function setMenuState(isOpen: boolean) {
+		if (!toggleBtn || !mobileMenu || !iconOpen || !iconClose) return;
+		toggleBtn.setAttribute('aria-expanded', String(isOpen));
+		toggleBtn.setAttribute(
+			'aria-label',
+			isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación',
+		);
+		mobileMenu.classList.toggle('hidden', !isOpen);
+		iconOpen.classList.toggle('hidden', isOpen);
+		iconClose.classList.toggle('hidden', !isOpen);
+	}
+
+	if (toggleBtn && mobileMenu) {
+		toggleBtn.addEventListener('click', () => {
+			const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+			setMenuState(!isOpen);
+		});
+
+		mobileMenu.querySelectorAll('[data-mobile-nav-link]').forEach((link) => {
+			link.addEventListener('click', () => setMenuState(false));
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+				setMenuState(false);
+				toggleBtn.focus();
+			}
+		});
+	}
+</script>

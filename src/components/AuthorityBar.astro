@@ -1,0 +1,69 @@
+---
+import { TRUST_PILLARS } from '../data/site';
+---
+
+<section
+	aria-label="Respaldo profesional"
+	class="border-y border-slate-800 bg-[#0F172A]/95 px-4 py-10 sm:px-6 sm:py-12"
+>
+	<div class="mx-auto max-w-6xl">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+			{
+				TRUST_PILLARS.map((pillar) => (
+					<div class="flex items-start gap-4 rounded-xl border border-slate-800/80 bg-slate-900/45 p-5">
+						<div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-blue-500/25 bg-blue-500/10 text-blue-400">
+							{pillar.icon === 'briefcase' && (
+								<svg
+									class="h-5 w-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+									<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+								</svg>
+							)}
+							{pillar.icon === 'code' && (
+								<svg
+									class="h-5 w-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<polyline points="16 18 22 12 16 6"></polyline>
+									<polyline points="8 6 2 12 8 18"></polyline>
+								</svg>
+							)}
+							{pillar.icon === 'speed' && (
+								<svg
+									class="h-5 w-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
+								</svg>
+							)}
+						</div>
+						<div>
+							<p class="text-base font-bold text-white">{pillar.title}</p>
+							<p class="mt-1.5 text-sm leading-relaxed text-slate-400">{pillar.description}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
